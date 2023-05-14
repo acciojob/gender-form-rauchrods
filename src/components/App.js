@@ -26,13 +26,20 @@ const App = () => {
       <label htmlFor="female">Female</label>
       <input type="radio" name="gender" id="female" onChange={updatefunc} />
 
-      <h2>Select your {gender} size</h2>
-      <select name="size">
-        <option value="2">2</option>
-        <option value="4">4</option>
-        <option value="6">6</option>
-      </select>
-
+      <h2>Select your {gender} size:</h2>
+      {gender == "shirt" ?
+        <select name="male-size">
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </select>
+        :
+        <select name="female-size">
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+        </select>
+      }
     </div>
   )
 }
